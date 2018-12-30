@@ -134,4 +134,9 @@ public class ThrottlingAppenderWrapper<E extends DeferredProcessingAware> implem
     public FilterReply getFilterChainDecision(E event) {
         return appender.getFilterChainDecision(event);
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getName() + "[" + getName() + "]";
+    }
 }
