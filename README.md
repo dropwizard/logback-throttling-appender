@@ -8,9 +8,20 @@ A throttling appender for the [Logback] logging framework.
 
 [Logback]: https://logback.qos.ch/
 
+
 ## Usage
 
 *TODO*
+
+
+## Build
+
+    ./mvnw package
+
+
+## Release
+
+    ./mvnw release:prepare release:perform
 
 
 ## Maven Artifacts
@@ -25,14 +36,12 @@ This project is available on Maven Central. To add it to your project simply add
     </dependency>
 
 
-Support
--------
+# Support
 
 Please file bug reports and feature requests in [GitHub issues](https://github.com/dropwizard/logback-throttling-appender/issues).
 
 
-License
--------
+# License
 
 Copyright (c) 2018-2019 Dropwizard Maintainers
 
