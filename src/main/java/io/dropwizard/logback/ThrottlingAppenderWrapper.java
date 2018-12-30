@@ -20,7 +20,7 @@ import static java.util.Objects.requireNonNull;
  * Throttling is defined by an average duration between messages.
  * Throttled messages are discarded.
  */
-class ThrottlingAppenderWrapper<E extends DeferredProcessingAware> implements Appender<E>, AsyncAppenderBaseProxy<E> {
+public class ThrottlingAppenderWrapper<E extends DeferredProcessingAware> implements Appender<E>, AsyncAppenderBaseProxy<E> {
     private final AsyncAppenderBase<E> appender;
     private final RateLimiter rateLimiter;
 
