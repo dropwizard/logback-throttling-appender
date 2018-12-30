@@ -65,6 +65,14 @@ class ThrottlingAppenderWrapperTest {
     }
 
     @Test
+    @SuppressWarnings("NullAway")
+    void nullAppender() {
+        assertThatThrownBy(() -> new ThrottlingAppenderWrapper<>(null, 1L, TimeUnit.SECONDS))
+                .isInstanceOf(NullPointerException.class)
+                .hasMessageContaining("delegate must not be null!");
+    }
+
+    @Test
     void appenderWithZeroMessageRate() {
         assertThatThrownBy(() -> new ThrottlingAppenderWrapper<>(asyncAppender, 0L, TimeUnit.SECONDS))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -276,7 +284,7 @@ class ThrottlingAppenderWrapperTest {
     }
 
     @Test
-    void getFilterChainDecision() {
+    void testGetFilterChainDecision() {
         final ThrottlingAppenderWrapper<ILoggingEvent> wrapper = new ThrottlingAppenderWrapper<>(asyncAppender, 1L, TimeUnit.SECONDS);
         final LevelFilter filter = new LevelFilter();
         filter.setLevel(Level.ERROR);
@@ -289,5 +297,11 @@ class ThrottlingAppenderWrapperTest {
         event.setLevel(Level.DEBUG);
 
         assertThat(wrapper.getFilterChainDecision(event)).isEqualTo(FilterReply.DENY);
+    }
+
+    @Test
+    void testToString() {
+        final ThrottlingAppenderWrapper<ILoggingEvent> wrapper = new ThrottlingAppenderWrapper<>(asyncAppender, 1L, TimeUnit.SECONDS);
+        assertThat(wrapper.toString()).isEqualTo("io.dropwizard.logback.ThrottlingAppenderWrapper[async-appender-test]");
     }
 }
