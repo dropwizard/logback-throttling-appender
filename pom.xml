@@ -7,7 +7,9 @@
     <artifactId>logback-throttling-appender</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <name>Throttling appender wrapper for Logback</name>
+    <name>Throttling Appender</name>
+    <description>Throttling appender wrapper for Logback</description>
+    <url>https://github.com/dropwizard/logback-throttling-appender/</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
