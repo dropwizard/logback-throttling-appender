@@ -211,11 +211,6 @@
                     <version>1.6.8</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.owasp</groupId>
-                    <artifactId>dependency-check-maven</artifactId>
-                    <version>5.2.1</version>
-                </plugin>
-                <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>0.8.4</version>
@@ -283,22 +278,6 @@
                         <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <configuration>
-                    <failBuildOnAnyVulnerability>true</failBuildOnAnyVulnerability>
-                    <showSummary>true</showSummary>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>security-check</id>
-                        <goals>
-                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
