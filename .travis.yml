@@ -1,8 +1,0 @@
-language: java
-jdk:
-  - openjdk8
-cache:
-  directories:
-    - $HOME/.m2
-after_success:
-  - ./mvnw -B jacoco:report coveralls:report
