@@ -1,7 +1,7 @@
 # Throttling Appender for Logback
 
-[![Build Status](https://travis-ci.org/dropwizard/logback-throttling-appender.svg?branch=master)](https://travis-ci.org/dropwizard/logback-throttling-appender)
-[![Coverage Status](https://img.shields.io/coveralls/dropwizard/logback-throttling-appender.svg)](https://coveralls.io/r/dropwizard/logback-throttling-appender)
+[![Build](https://github.com/dropwizard/logback-throttling-appender/actions/workflows/build.yml/badge.svg)](https://github.com/dropwizard/logback-throttling-appender/actions/workflows/build.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dropwizard_logback-throttling-appender&metric=alert_status)](https://sonarcloud.io/dashboard?id=dropwizard_logback-throttling-appender)
 [![Maven Central](https://img.shields.io/maven-central/v/io.dropwizard.logback/logback-throttling-appender.svg)](http://mvnrepository.com/artifact/io.dropwizard.logback/logback-throttling-appender)
 
 A throttling appender for the [Logback] logging framework.
@@ -32,7 +32,7 @@ This project is available on Maven Central. To add it to your project simply add
     <dependency>
       <groupId>io.dropwizard.logback</groupId>
       <artifactId>logback-throttling-appender</artifactId>
-      <version>1.0.0</version>
+      <version>1.1.0</version>
     </dependency>
 
 
@@ -43,7 +43,7 @@ Please file bug reports and feature requests in [GitHub issues](https://github.c
 
 # License
 
-Copyright (c) 2018-2019 Dropwizard Maintainers
+Copyright (c) 2018-2021 Dropwizard Maintainers
 
 This library is licensed under the Apache License, Version 2.0.
 
