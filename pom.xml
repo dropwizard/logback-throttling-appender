@@ -88,8 +88,8 @@
     </issueManagement>
 
     <ciManagement>
-        <system>Travis CI</system>
-        <url>https://travis-ci.org/dropwizard/logback-throttling-appender</url>
+        <system>GitHub Actions</system>
+        <url>https://github.com/dropwizard/logback-throttling-appender/actions</url>
     </ciManagement>
 
     <distributionManagement>
