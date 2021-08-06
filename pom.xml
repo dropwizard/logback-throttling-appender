@@ -307,6 +307,10 @@
                                     <shadedPattern>io.dropwizard.logback.shaded.guava</shadedPattern>
                                 </relocation>
                                 <relocation>
+                                    <pattern>com.google.j2objc</pattern>
+                                    <shadedPattern>io.dropwizard.logback.shaded.j2objc</shadedPattern>
+                                </relocation>
+                                <relocation>
                                     <pattern>com.google.errorprone</pattern>
                                     <shadedPattern>io.dropwizard.logback.shaded.errorprone</shadedPattern>
                                 </relocation>
