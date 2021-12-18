@@ -298,6 +298,7 @@
                                         <exclude>META-INF/maven/com.google.errorprone/**</exclude>
                                         <exclude>META-INF/maven/com.google.j2objc/**</exclude>
                                         <exclude>META-INF/maven/org.codehaus.mojo/**</exclude>
+                                        <exclude>META-INF/maven/com.google.code.findbugs.jsr305/**</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
@@ -317,6 +318,10 @@
                                 <relocation>
                                     <pattern>org.checkerframework</pattern>
                                     <shadedPattern>io.dropwizard.logback.shaded.checkerframework</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>javax.annotation</pattern>
+                                    <shadedPattern>io.dropwizard.logback.shaded.jsr305</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
