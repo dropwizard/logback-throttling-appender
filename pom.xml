@@ -291,14 +291,15 @@
                             <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
                             <filters>
                                 <filter>
-                                    <artifact>*:*</artifact>
+                                    <artifact>com.google.*:*</artifact>
                                     <excludes>
-                                        <exclude>META-INF/maven/com.google.guava/**</exclude>
-                                        <exclude>META-INF/maven/com.google.code.findbugs/**</exclude>
-                                        <exclude>META-INF/maven/com.google.errorprone/**</exclude>
-                                        <exclude>META-INF/maven/com.google.j2objc/**</exclude>
-                                        <exclude>META-INF/maven/org.codehaus.mojo/**</exclude>
-                                        <exclude>META-INF/maven/com.google.code.findbugs.jsr305/**</exclude>
+                                        <exclude>META-INF/**</exclude>
+                                    </excludes>
+                                </filter>
+                                <filter>
+                                    <artifact>org.checkerframework:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/**</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
