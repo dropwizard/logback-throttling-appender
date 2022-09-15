@@ -27,7 +27,7 @@
         <sonar.organization>dropwizard</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
-        <logback.version>1.2.11</logback.version>
+        <logback.version>1.4.1</logback.version>
         <guava.version>31.1-jre</guava.version>
         <junit.jupiter.version>5.3.2</junit.jupiter.version>
         <assertj.version>3.23.1</assertj.version>
