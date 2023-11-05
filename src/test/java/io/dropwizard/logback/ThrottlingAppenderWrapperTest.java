@@ -6,6 +6,7 @@ import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.filter.LevelFilter;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.classic.spi.LoggingEvent;
+import ch.qos.logback.classic.util.LogbackMDCAdapter;
 import ch.qos.logback.core.spi.FilterReply;
 import ch.qos.logback.core.spi.LifeCycle;
 import ch.qos.logback.core.status.ErrorStatus;
@@ -37,6 +38,7 @@ class ThrottlingAppenderWrapperTest {
     void setup() {
         context = new LoggerContext();
         context.setName("context-test");
+        context.setMDCAdapter(new LogbackMDCAdapter());
         context.start();
 
         collectingAppender = new CollectingAppender<>();
@@ -109,7 +111,7 @@ class ThrottlingAppenderWrapperTest {
         final RateLimiter rateLimiter = RateLimiter.create(limit);
         for (int i = 0; i < lineCount; i++) {
             rateLimiter.acquire();
-            final LoggingEvent event = new LoggingEvent();
+            final LoggingEvent event = newLoggingEvent();
             event.setLevel(Level.INFO);
             event.setLoggerName("test");
             event.setMessage(APP_LOG_PREFIX + " " + i);
@@ -177,7 +179,7 @@ class ThrottlingAppenderWrapperTest {
     void testDoAppend() {
         final ThrottlingAppenderWrapper<ILoggingEvent> wrapper = new ThrottlingAppenderWrapper<>(asyncAppender, 1L, TimeUnit.SECONDS);
         wrapper.start();
-        final LoggingEvent event = new LoggingEvent();
+        final LoggingEvent event = newLoggingEvent();
         wrapper.doAppend(event);
         wrapper.stop();
 
@@ -293,7 +295,7 @@ class ThrottlingAppenderWrapperTest {
         wrapper.addFilter(filter);
         wrapper.start();
 
-        final LoggingEvent event = new LoggingEvent();
+        final LoggingEvent event = newLoggingEvent();
         event.setLevel(Level.DEBUG);
 
         assertThat(wrapper.getFilterChainDecision(event)).isEqualTo(FilterReply.DENY);
@@ -303,5 +305,11 @@ class ThrottlingAppenderWrapperTest {
     void testToString() {
         final ThrottlingAppenderWrapper<ILoggingEvent> wrapper = new ThrottlingAppenderWrapper<>(asyncAppender, 1L, TimeUnit.SECONDS);
         assertThat(wrapper.toString()).isEqualTo("io.dropwizard.logback.ThrottlingAppenderWrapper[async-appender-test]");
+    }
+
+    private LoggingEvent newLoggingEvent() {
+        final LoggingEvent event = new LoggingEvent();
+        event.setLoggerContext(context);
+        return event;
     }
 }
