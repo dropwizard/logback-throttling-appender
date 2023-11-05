@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java_version: ['11']
+        java_version: ['17']
         os: ['ubuntu-latest']
     env:
       JAVA_OPTS: "-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
@@ -27,7 +27,7 @@ jobs:
         java-version: ${{ matrix.java_version }}
         cache: 'maven'
     - name: Cache SonarCloud packages
-      if: matrix.java_version == '11'
+      if: matrix.java_version == '17'
       uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3
       with:
         path: ~/.sonar/cache
@@ -36,7 +36,7 @@ jobs:
     - name: Build
       run: ./mvnw -B -V -ntp install
     - name: Analyze with SonarCloud
-      if: ${{ env.SONAR_TOKEN != null && env.SONAR_TOKEN != '' && matrix.java_version == '11' }}
+      if: ${{ env.SONAR_TOKEN != null && env.SONAR_TOKEN != '' && matrix.java_version == '17' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
