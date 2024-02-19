@@ -4,7 +4,7 @@
 
     <groupId>io.dropwizard.logback</groupId>
     <artifactId>logback-throttling-appender</artifactId>
-    <version>1.4.2</version>
+    <version>1.4.3-SNAPSHOT</version>
 
     <name>Throttling Appender</name>
     <description>Throttling appender wrapper for Logback</description>
