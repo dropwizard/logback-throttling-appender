@@ -9,7 +9,7 @@
     ":prConcurrentLimitNone",
     ":separatePatchReleases"
   ],
-  "baseBranches": ["1.2.x", "1.3.x", "1.4.x"],
+  "baseBranches": ["1.2.x", "1.3.x", "1.4.x", "1.5.x"],
   "dependencyDashboard": true,
   "labels": ["dependencies"],
   "platformAutomerge": true,
