@@ -27,7 +27,7 @@
     {
       "groupName": "Maven plugins",
       "groupSlug": "maven-plugins",
-      "matchPackagePrefixes": ["org.apache.maven.plugins"]
+      "matchPackageNames": ["org.apache.maven.plugins{/,}**"]
     }
   ],
   "platformAutomerge": true,
