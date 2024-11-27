@@ -1,0 +1,17 @@
+---
+name: renovate-config-validator
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+  push:
+    branches:
+      - 1.2.x
+      - 1.3.x
+      - 1.4.x
+      - 1.5.x
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: suzuki-shunsuke/github-action-renovate-config-validator@c22827f47f4f4a5364bdba19e1fe36907ef1318e # v1.1.1
