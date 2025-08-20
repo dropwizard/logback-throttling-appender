@@ -375,6 +375,8 @@
                         <configuration>
                             <doclint>none</doclint>
                             <quiet>true</quiet>
+                            <notimestamp>true</notimestamp>
+                            <javadocVersion>1.8</javadocVersion>
                         </configuration>
                         <executions>
                             <execution>
