@@ -15,24 +15,39 @@
     "schedule:automergeWeekly",
     "schedule:weekly"
   ],
-  "baseBranches": ["1.2.x", "1.3.x", "1.4.x", "1.5.x"],
+  "baseBranchPatterns": [
+    "1.2.x",
+    "1.3.x",
+    "1.4.x",
+    "1.5.x"
+  ],
   "dependencyDashboard": true,
-  "labels": ["dependencies"],
-    "packageRules": [
+  "labels": [
+    "dependencies"
+  ],
+  "packageRules": [
     {
-      "matchManagers": ["github-actions"],
+      "matchManagers": [
+        "github-actions"
+      ],
       "groupName": "GitHub Actions",
       "groupSlug": "github-actions"
     },
     {
       "groupName": "Maven plugins",
       "groupSlug": "maven-plugins",
-      "matchPackageNames": ["org.apache.maven.plugins{/,}**"]
+      "matchPackageNames": [
+        "org.apache.maven.plugins{/,}**"
+      ]
     }
   ],
   "platformAutomerge": true,
-  "reviewers": ["team:committers"],
+  "reviewers": [
+    "team:committers"
+  ],
   "vulnerabilityAlerts": {
-    "assignees": ["team:committers"]
+    "assignees": [
+      "team:committers"
+    ]
   }
 }
