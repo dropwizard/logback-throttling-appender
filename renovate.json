@@ -16,9 +16,6 @@
     "schedule:weekly"
   ],
   "baseBranchPatterns": [
-    "1.2.x",
-    "1.3.x",
-    "1.4.x",
     "1.5.x"
   ],
   "dependencyDashboard": true,
