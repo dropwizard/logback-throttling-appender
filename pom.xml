@@ -90,13 +90,6 @@
         <url>https://github.com/dropwizard/logback-throttling-appender/actions</url>
     </ciManagement>
 
-    <distributionManagement>
-        <repository>
-            <id>ossrh</id>
-            <name>Sonatype Central Portal Repository</name>
-        </repository>
-    </distributionManagement>
-
     <repositories>
         <repository>
             <id>ossrh</id>
