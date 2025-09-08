@@ -310,7 +310,7 @@
                                     </excludes>
                                 </filter>
                                 <filter>
-                                    <artifact>org.checkerframework:*</artifact>
+                                    <artifact>org.jspecify:*</artifact>
                                     <excludes>
                                         <exclude>META-INF/**</exclude>
                                     </excludes>
@@ -330,8 +330,8 @@
                                     <shadedPattern>io.dropwizard.logback.shaded.errorprone</shadedPattern>
                                 </relocation>
                                 <relocation>
-                                    <pattern>org.checkerframework</pattern>
-                                    <shadedPattern>io.dropwizard.logback.shaded.checkerframework</shadedPattern>
+                                    <pattern>org.jspecify.annotations</pattern>
+                                    <shadedPattern>io.dropwizard.logback.shaded.jspecify</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>javax.annotation</pattern>
