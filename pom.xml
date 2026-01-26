@@ -28,7 +28,7 @@
         <logback.version>1.5.26</logback.version>
         <guava.version>33.5.0-jre</guava.version>
         <junit.jupiter.version>5.3.2</junit.jupiter.version>
-        <assertj.version>3.27.6</assertj.version>
+        <assertj.version>3.27.7</assertj.version>
     </properties>
 
     <developers>
